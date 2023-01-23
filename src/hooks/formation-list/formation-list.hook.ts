@@ -1,4 +1,4 @@
-import {Formation} from './formation.types';
+import {Formation} from './formation-list.types';
 
 export function useFormationList(): Formation[] {
   return [

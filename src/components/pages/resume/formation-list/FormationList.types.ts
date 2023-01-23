@@ -1,4 +1,4 @@
-import {Formation} from '../../../../hooks/formation.types';
+import {Formation} from '@hooks/formation-list';
 
 export interface FormationListProps {
   formations: Formation[]
