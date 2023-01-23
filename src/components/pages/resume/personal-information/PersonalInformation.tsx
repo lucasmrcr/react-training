@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import styled from 'styled-components';
-import profilePic from '../../../assets/images/profile_pic.jpg';
-import Picture from '../../shared/Picture';
+import profilePic from '../../../../assets/images/profile_pic.jpg';
+import Picture from '@shared/Picture';
 
 const PersonalInformationContainer = styled.div`
   background-color: gray;
@@ -22,6 +22,7 @@ const PersonalNameUI = styled.h2`
 const PersonalInformation: FC = () => <PersonalInformationContainer>
   <ProfilePictureContainer>
     <Picture src={profilePic}/>
+
     <PersonalNameUI>Lucas Mercier</PersonalNameUI>
   </ProfilePictureContainer>
 </PersonalInformationContainer>;

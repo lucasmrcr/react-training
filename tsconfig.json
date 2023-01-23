@@ -18,9 +18,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@hooks/*": ["./src/hooks/*"],
+      "@shared/*": ["./src/components/shared/*"],
+    }
   },
   "include": [
     "src"
-  ]
+  ],
+  "extends": "tsconfig.paths.json"
 }

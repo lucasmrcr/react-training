@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Col, Container, Row} from 'react-bootstrap';
-import PersonalInformation from './PersonalInformation';
+import PersonalInformation from './personal-information/PersonalInformation';
 import Abstract from './Abstract';
 import FormationList from './formation-list/FormationListBase';
 import ExperienceList from './ExperienceList';
