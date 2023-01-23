@@ -2,7 +2,7 @@ import {FC} from 'react';
 import styled from 'styled-components';
 import profilePic from '../../../../assets/images/profile_pic.jpg';
 import Picture from '@shared/picture';
-import HobbyListUI from './hobby-list/HobbyListUI';
+import HobbyListBase from './hobby-list/HobbyListBase';
 
 const PersonalInformationContainer = styled.div`
   background-color: gray;
@@ -24,7 +24,7 @@ const PersonalInformation: FC = () => <PersonalInformationContainer>
   <ProfilePictureContainer>
     <Picture src={profilePic}/>
     <PersonalNameUI>Lucas Mercier</PersonalNameUI>
-    <HobbyListUI />
+    <HobbyListBase />
   </ProfilePictureContainer>
 </PersonalInformationContainer>;
 

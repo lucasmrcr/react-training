@@ -1,7 +1,9 @@
 import {FC} from 'react';
 import ButtonListUI from './button-list/ButtonListUI';
-import CounterProps from './shared/CounterProps';
+import {AddHobbyOnClickedProps} from '../HobbyList.types';
+import {AddButtonCounterProps} from './button-list/add-button/AddButton.types';
 
-const ButtonWrapperUI: FC<CounterProps> = ({counter, onClick}) => <ButtonListUI counter={counter} onClick={onClick} />
+const ButtonWrapperUI: FC<AddHobbyOnClickedProps & AddButtonCounterProps> = ({addHobbyOnClicked, counter}) =>
+  <ButtonListUI addHobbyOnClicked={addHobbyOnClicked} counter={counter}/>;
 
-export default ButtonWrapperUI
+export default ButtonWrapperUI;
