@@ -5,6 +5,7 @@ import Picture from '../../shared/Picture';
 
 const PersonalInformationContainer = styled.div`
   background-color: gray;
+  height: 100%;
 `;
 
 const ProfilePictureContainer = styled.div`
@@ -14,9 +15,14 @@ const ProfilePictureContainer = styled.div`
   }
 `;
 
+const PersonalNameUI = styled.h2`
+  color: #f7f7f7;
+`
+
 const PersonalInformation: FC = () => <PersonalInformationContainer>
   <ProfilePictureContainer>
     <Picture src={profilePic}/>
+    <PersonalNameUI>Lucas Mercier</PersonalNameUI>
   </ProfilePictureContainer>
 </PersonalInformationContainer>;
 
