@@ -1,12 +1,8 @@
 import {FC, useState} from 'react';
 import AddButtonUI from './AddButtonUI';
+import CounterProps from '../../shared/CounterProps';
 
-const AddButtonBase: FC = () => {
-  const [counter, setCounter] = useState(0);
-
-  const onClick = () => {
-    setCounter(counter => counter + 1);
-  };
+const AddButtonBase: FC<CounterProps> = ({counter, onClick}) => {
   return <AddButtonUI onClick={onClick} counter={counter}/>;
 };
 

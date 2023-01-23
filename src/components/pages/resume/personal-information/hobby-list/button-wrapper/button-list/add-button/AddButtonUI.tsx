@@ -1,8 +1,8 @@
 import {FC} from 'react';
-import {AddButtonProps} from './AddButton.type';
 import Button from '@shared/button';
+import CounterProps from '../../shared/CounterProps';
 
-const AddButtonUI: FC<AddButtonProps> = ({onClick, counter}) => <Button onClick={onClick}>
+const AddButtonUI: FC<CounterProps> = ({onClick, counter}) => <Button onClick={onClick}>
   Il y a {counter} clicks
 </Button>;
 

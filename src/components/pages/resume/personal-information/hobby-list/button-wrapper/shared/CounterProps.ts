@@ -1,4 +1,4 @@
-export interface AddButtonProps {
+export default interface CounterProps {
   onClick: () => void;
   counter: number;
 }
