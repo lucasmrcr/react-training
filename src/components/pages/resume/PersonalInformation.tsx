@@ -4,8 +4,7 @@ import profilePic from '../../../assets/images/profile_pic.jpg';
 import Picture from '../../shared/Picture';
 
 const PersonalInformationContainer = styled.div`
-  height: 100vh;
-  background-color: yellow;
+  background-color: gray;
 `;
 
 const ProfilePictureContainer = styled.div`
