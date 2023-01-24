@@ -5,11 +5,12 @@ import {ExperienceListItemProps} from './ExperienceList.types';
 
 const CardUI = styled(Card)`
   flex-direction: row;
+  align-items: center;
   margin: 10px 0;
 `
 const CardImage = styled(Card.Img)`
-  height: 100px;
-  width: auto;
+  height: fit-content;
+  width: 100px;
 `
 
 const ExperienceListItem: FC<ExperienceListItemProps> = ({experience}) => <CardUI style={{flexDirection: 'row'}}>

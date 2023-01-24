@@ -5,14 +5,15 @@ import styled from 'styled-components';
 
 const CardUI = styled(Card)`
   flex-direction: row;
+  align-items: center;
   margin: 10px 0;
 `
 const CardImage = styled(Card.Img)`
-  height: 100px;
-  width: auto;
+  height: fit-content;
+  width: 100px;
 `
 
-const FormationListItem: FC<FormationListItemProps> = ({formation}) => <CardUI style={{flexDirection: 'row'}}>
+const FormationListItem: FC<FormationListItemProps> = ({formation}) => <CardUI>
   <CardImage src={formation.picture} />
   <Card.Body>
     <Card.Title>{formation.name}</Card.Title>
