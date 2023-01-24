@@ -7,6 +7,7 @@ const FormationContainer = styled.div`
 `;
 
 const FormationListUI: FC<FormationListProps> = ({formations}) => <FormationContainer>
+  <h2>Formations</h2>
   {formations && formations.map((formation, index) => <FormationListItem formation={formation} key={index} />)}
 </FormationContainer>;
 

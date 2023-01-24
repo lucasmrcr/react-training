@@ -3,8 +3,8 @@ import {Col, Container, Row} from 'react-bootstrap';
 import PersonalInformation from './personal-information/PersonalInformation';
 import Abstract from './Abstract';
 import FormationList from './formation-list/FormationListBase';
-import ExperienceList from './ExperienceList';
 import SkillList from './SkillList';
+import ExperienceListBase from './experience-list/ExperienceListBase';
 
 const Resume: FC = () => <Container>
   <Row>
@@ -13,8 +13,8 @@ const Resume: FC = () => <Container>
     </Col>
     <Col md={9}>
       <Abstract />
+      <ExperienceListBase />
       <FormationList />
-      <ExperienceList />
       <SkillList />
     </Col>
   </Row>
