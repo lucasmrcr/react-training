@@ -5,12 +5,4 @@ export interface HobbyListState {
   showModal: boolean;
 }
 
-export type KeyMapHobbyListAction = {
-  'ADD_HOBBY': Hobby;
-  'SHOW_MODAL': boolean;
-}
-
-export type HobbyListAction<T extends keyof KeyMapHobbyListAction> = {
-  type: T;
-  payload: KeyMapHobbyListAction[T]
-};
+export type HobbyListAction = { type: 'ADD_HOBBY'; payload: Hobby; } | { type: 'SHOW_MODAL'; payload: boolean; };

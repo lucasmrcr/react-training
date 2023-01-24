@@ -1,9 +1,7 @@
 import {HobbyListState} from './hobby-list.types';
 
 const hobbyListInitialState: HobbyListState = {
-  hobbies: [
-    {name: 'Football'}
-  ],
+  hobbies: JSON.parse(localStorage.getItem('hobbies') || '[]'),
   showModal: false
 };
 

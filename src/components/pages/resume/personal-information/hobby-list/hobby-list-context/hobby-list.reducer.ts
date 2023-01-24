@@ -1,12 +1,13 @@
-import {HobbyListAction, HobbyListState, KeyMapHobbyListAction} from './hobby-list.types';
-import Hobby from '../../../../../../types/hobby.type';
+import {HobbyListAction, HobbyListState} from './hobby-list.types';
 
-const hobbyListReducer = (state: HobbyListState, action: HobbyListAction<keyof KeyMapHobbyListAction>): HobbyListState => {
+const hobbyListReducer = (state: HobbyListState, action: HobbyListAction): HobbyListState => {
   switch (action.type) {
     case 'ADD_HOBBY':
-      return {...state, hobbies: [...state.hobbies, action.payload as Hobby]};
+      const hobbies = [...state.hobbies, action.payload];
+      localStorage.setItem('hobbies', JSON.stringify(hobbies));
+      return {...state, hobbies: hobbies};
     case 'SHOW_MODAL':
-      return {...state, showModal: action.payload as boolean};
+      return {...state, showModal: action.payload};
   }
   return state;
 };
