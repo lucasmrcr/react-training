@@ -1,10 +1,8 @@
 import {FC} from 'react';
 import Button from '@shared/button';
-import {AddButtonCounterProps, AddButtonProps} from './AddButton.types';
-import {AddHobbyOnClickedProps} from '../../../HobbyList.types';
 
-const AddButtonUI: FC<AddHobbyOnClickedProps & AddButtonProps & AddButtonCounterProps> = ({addHobbyOnClicked, additionalCounter, counter}) => <Button onClick={addHobbyOnClicked}>
-  {additionalCounter} useEffects
+const AddButtonUI: FC = () => <Button>
+  Ajouter un hobby
 </Button>;
 
 export default AddButtonUI;

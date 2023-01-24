@@ -1,23 +1,18 @@
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import {Hobby} from '../../types';
-
-const initialHobbyListState: Hobby[] = [
-  {
-    name: 'Football',
-  },
-  {
-    name: 'Basketball',
-  }
-];
+import HobbyListContext
+  from '../../components/pages/resume/personal-information/hobby-list/hobby-list-context/hobby-list.context';
 
 const useHobbyList: () => [Hobby[], (newHobby: Hobby) => void] = () => {
-  const [hobbies, setHobbies] = useState(initialHobbyListState);
+  const [hobbyListState, hobbyListDispatch] = useContext(HobbyListContext);
 
   const addHobby = (newHobby: Hobby) => {
-    setHobbies(hobbies => [...hobbies, newHobby]);
+    hobbyListDispatch({type: 'ADD_HOBBY', payload: newHobby});
   };
 
-  return [hobbies, addHobby];
+  console.log(hobbyListState.hobbies);
+
+  return [hobbyListState.hobbies, addHobby];
 };
 
 export default useHobbyList;

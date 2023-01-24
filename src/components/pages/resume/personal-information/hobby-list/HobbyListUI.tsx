@@ -1,25 +1,22 @@
 import {FC} from 'react';
 import ButtonWrapperUI from './button-wrapper/ButtonWrapperUI';
-import {AddHobbyOnClickedProps, HobbyListProps} from './HobbyList.types';
-import {ListGroup, ListGroupItem} from 'react-bootstrap';
+import {HobbyListProps} from './HobbyList.types';
 import styled from 'styled-components';
+import AddHobbyModalBase from './add-hobby-modal/AddHobbyModalBase';
+import HobbyListContext from './hobby-list-context/hobby-list.context';
+import HobbyListGroupBase from './hobby-list-group/HobbyListGroupBase';
 
 const HobbyListWrapper = styled.div`
-`
+`;
 
-const HobbyListGroup = styled(ListGroup)`
-  margin: 10px 0;
-`
-
-const HobbyListUI: FC<HobbyListProps & AddHobbyOnClickedProps> = ({hobbies, addHobbyOnClicked}) => {
-
-  return <HobbyListWrapper>
+const HobbyListUI: FC<HobbyListProps> = ({hobbyListContextValue}) => <HobbyListContext.Provider
+  value={hobbyListContextValue}>
+  <HobbyListWrapper>
     <h5>Liste des Hobbies</h5>
-    <HobbyListGroup>
-      {hobbies && hobbies.map((hobby, index) => <ListGroupItem key={index}>{hobby.name}</ListGroupItem>)}
-    </HobbyListGroup>
-    <ButtonWrapperUI counter={hobbies.length}  addHobbyOnClicked={addHobbyOnClicked}/>
-  </HobbyListWrapper>;
-};
+    <HobbyListGroupBase />
+    <ButtonWrapperUI/>
+  </HobbyListWrapper>
+  <AddHobbyModalBase/>
+</HobbyListContext.Provider>;
 
 export default HobbyListUI;

@@ -1,9 +1,7 @@
-import {Hobby} from '../../../../../types';
+import HobbyListState from './hobby-list-context/hobby-list.state';
+import {Dispatch} from 'react';
+import {HobbyListAction, KeyMapHobbyListAction} from './hobby-list-context/hobby-list.types';
 
 export interface HobbyListProps {
-  hobbies: Hobby[]
-}
-
-export interface AddHobbyOnClickedProps {
-  addHobbyOnClicked: () => void
+  hobbyListContextValue:  [typeof HobbyListState, Dispatch<HobbyListAction<keyof KeyMapHobbyListAction>>]
 }
