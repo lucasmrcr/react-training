@@ -1,5 +1,4 @@
-// @ts-ignore
-import Hobby from "@types/hobby.type";
+import Hobby from '../../../../../../types/hobby.type';
 
 export interface HobbyListState {
   hobbies: Hobby[];
