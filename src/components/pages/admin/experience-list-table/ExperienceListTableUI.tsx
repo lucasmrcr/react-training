@@ -22,7 +22,9 @@ const ExperienceListTableUI: FC<ExperienceListTableProps> = ({experiences, delet
           <td>{experience.name}</td>
           <td>{experience.host}</td>
           <td>{experience.period}</td>
-          <td><a href="" onClick={() => deleteExperience(experience.id ?? '')}>Supprimer</a></td>
+          <td>
+            <a href="" onClick={() => deleteExperience(experience.id ?? '')}>Supprimer</a>
+          </td>
         </tr>
       )}
       </tbody>

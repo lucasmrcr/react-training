@@ -1,10 +1,11 @@
 import React, {FC, lazy, Suspense} from 'react';
-import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
-import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import {Container, Nav, Navbar} from 'react-bootstrap';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import AdminBase from './pages/admin/AdminBase';
 
 
 const Resume = lazy(() => import('./pages/resume/Resume'));
-const Admin = lazy(() => import('./pages/admin/Admin'));
+const Admin = lazy(() => import('./pages/admin/AdminBase'));
 
 const App: FC = () => <>
   <Router>
@@ -20,7 +21,7 @@ const App: FC = () => <>
     </Navbar>
     <Suspense fallback={<div>Chargement...</div>}>
       <Routes>
-        <Route path="/admin" element={<Admin/>}/>
+        <Route path="/admin" element={<AdminBase />}/>
         <Route path="/" element={<Resume/>}/>
       </Routes>
     </Suspense>

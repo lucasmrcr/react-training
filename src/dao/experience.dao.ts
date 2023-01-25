@@ -16,6 +16,11 @@ export function saveExperience(experience: ExperienceDTO): Promise<ExperienceDTO
   return fetch(endpoint, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(experience)}).then(response => response.json());
 }
 
+export function editExperience(experience: ExperienceDTO): Promise<ExperienceDTO> {
+  return fetch(`${endpoint}/${experience.id}`,
+    {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(experience)}).then(response => response.json());
+}
+
 export function deleteExperience(id: string): Promise<Response> {
   return fetch(`${endpoint}/${id}`, {method: 'DELETE', headers: {'Content-Type': 'application/json'}})
 }

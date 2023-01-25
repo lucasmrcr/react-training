@@ -1,9 +1,12 @@
 import {FC} from 'react';
-import {Breadcrumb, Card, Col, Container, ListGroup, Row, Tab, TabContainer} from 'react-bootstrap';
+import {Breadcrumb, Col, Container, ListGroup, Row, Tab, TabContainer} from 'react-bootstrap';
 import AddExperienceFormBase from './add-experience-form/AddExperienceFormBase';
 import ExperienceListTableBase from './experience-list-table/ExperienceListTableBase';
+import {AdminProps} from './Admin.types';
+import EditExperienceFormBase from './edit-experience-form/EditExperienceFormBase';
 
-const Admin: FC = () => <Container>
+
+const AdminUI: FC<AdminProps> = ({setExperienceIdToEdit}) => <Container>
   <Row>
     <Col>
       <Breadcrumb>
@@ -23,6 +26,9 @@ const Admin: FC = () => <Container>
               <ListGroup.Item action href="#add-experience">
                 Ajouter une expérience
               </ListGroup.Item>
+              <ListGroup.Item action href="#edit-experience">
+                Editer une expérience
+              </ListGroup.Item>
             </ListGroup>
           </Col>
           <Col sm={8}>
@@ -33,6 +39,9 @@ const Admin: FC = () => <Container>
               <Tab.Pane eventKey="#add-experience">
                 <AddExperienceFormBase />
               </Tab.Pane>
+              <Tab.Pane eventKey="#edit-experience">
+                <EditExperienceFormBase />
+              </Tab.Pane>
             </Tab.Content>
           </Col>
         </Row>
@@ -41,4 +50,4 @@ const Admin: FC = () => <Container>
   </Row>
 </Container>;
 
-export default Admin;
+export default AdminUI;
