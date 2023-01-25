@@ -1,4 +1,4 @@
-const endpoint = 'http://localhost:8080/experiences';
+const endpoint = 'http://localhost:3000/experiences';
 
 export type ExperienceDTO = {
   id?: string

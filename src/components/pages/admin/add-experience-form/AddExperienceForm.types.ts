@@ -1,10 +1,10 @@
-import {RefObject} from 'react';
+import {ChangeEvent, RefObject} from 'react';
 
 export interface AddExperienceFormProps {
-  refName: RefObject<HTMLInputElement>;
-  refHost: RefObject<HTMLInputElement>;
-  refImage: RefObject<HTMLInputElement>;
-  refPeriod: RefObject<HTMLInputElement>;
+  onChangeName: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeHost: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeImage: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangePeriod: (event: ChangeEvent<HTMLInputElement>) => void;
   onClick: () => void;
 
 }

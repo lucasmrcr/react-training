@@ -1,25 +1,41 @@
-import {FC, RefObject, useRef} from 'react';
+import {ChangeEvent, FC, RefObject, useRef} from 'react';
 import AddExperienceFormUI from './AddExperienceFormUI';
 import {ExperienceDTO, saveExperience} from '../../../../dao/experience.dao';
+import {redirect, useNavigate} from 'react-router-dom';
 
 const AddExperienceFormBase: FC = () => {
-  const refHost = useRef<HTMLInputElement>() as RefObject<HTMLInputElement>;
-  const refImage = useRef<HTMLInputElement>() as RefObject<HTMLInputElement>;
-  const refName = useRef<HTMLInputElement>() as RefObject<HTMLInputElement>;
-  const refPeriod = useRef<HTMLInputElement>() as RefObject<HTMLInputElement>;
+  const values = {
+    host: '',
+    image: '',
+    name: '',
+    period: ''
+  };
 
-  const saveExperienceOnClick = () => {
+  const handleChange = (key: keyof typeof values) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      values[key] = event.target.value;
+    };
+  };
+
+  const navigate = useNavigate()
+
+  const saveExperienceOnClick = async () => {
     const experience: ExperienceDTO = {
-      name: refName.current?.value ?? '',
-      image: refImage.current?.value ?? '',
-      host: refHost.current?.value ?? '',
-      period: refPeriod.current?.value ?? '',
-    }
+      name: values.name,
+      image: values.image,
+      host: values.host,
+      period: values.period,
+    };
 
-    saveExperience(experience).then(console.log);
-  }
+    await saveExperience(experience);
+    navigate('/')
+  };
 
-  return <AddExperienceFormUI refHost={refHost} refImage={refImage} refName={refName} refPeriod={refPeriod} onClick={saveExperienceOnClick} />;
-}
+  return <AddExperienceFormUI onChangeHost={handleChange('host')}
+                              onChangeName={handleChange('name')}
+                              onChangeImage={handleChange('image')}
+                              onChangePeriod={handleChange('period')}
+                              onClick={saveExperienceOnClick}/>;
+};
 
 export default AddExperienceFormBase;
